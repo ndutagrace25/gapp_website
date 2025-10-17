@@ -1,0 +1,76 @@
+"use client";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <header className="absolute top-0 left-0 w-full flex justify-between items-center px-4 md:px-8 py-4 md:py-6 text-white z-50">
+        <div className="text-lg md:text-2xl font-light tracking-widest">
+          GAPP ARCHITECTS + PARTNERS LTD
+        </div>
+        <nav className="hidden md:flex gap-8 text-[20px] font-light">
+          <a href="#">Projects</a>
+          <a href="#">Ideas</a>
+          <a href="#">Culture</a>
+          <a href="#">About</a>
+        </nav>
+        <div className="hidden md:flex gap-6 items-center text-[20px] font-light">
+          <button>Contact Us</button>
+        </div>
+
+        <button onClick={() => setOpen(!open)} className="md:hidden text-white">
+          {open ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      {open && (
+        <div className="fixed inset-0 bg-black bg-opacity-90 z-40 md:hidden">
+          <div className="flex flex-col items-center justify-center h-full space-y-8 text-white">
+            <nav className="flex flex-col items-center space-y-6 text-base font-light">
+              <a
+                href="#"
+                className="hover:text-gray-300 transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                Projects
+              </a>
+              <a
+                href="#"
+                className="hover:text-gray-300 transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                Ideas
+              </a>
+              <a
+                href="#"
+                className="hover:text-gray-300 transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                Culture
+              </a>
+              <a
+                href="#"
+                className="hover:text-gray-300 transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                About
+              </a>
+            </nav>
+            <div className="pt-4">
+              <button
+                className="px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}

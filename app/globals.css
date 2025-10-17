@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
+@import "tailwindcss";
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Source Sans Pro", "Inter", sans-serif;
+  font-weight: 300;
+}
+
+/* Mobile-first responsive typography */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px; /* Reduce base font size on mobile */
+  }
+}
