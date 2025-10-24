@@ -58,7 +58,7 @@ export default function HomePage() {
       console.log("Cleaning up scroll listener");
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isManualScrolling]);
 
   // Also add a simple scroll listener on the document
   useEffect(() => {
@@ -90,7 +90,7 @@ export default function HomePage() {
     return () => {
       document.removeEventListener("scroll", handleDocumentScroll);
     };
-  }, []);
+  }, [isManualScrolling]);
 
   return (
     <main className="relative">
