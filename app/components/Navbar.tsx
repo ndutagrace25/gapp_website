@@ -94,10 +94,21 @@ export default function Navbar({ activeTab, forceActiveTab }: NavbarProps) {
             }
             onClick={(e) => {
               e.preventDefault();
-              document.getElementById("contact")?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
+              const contactElement = document.getElementById("contact");
+              if (contactElement) {
+                // Primary scroll method
+                contactElement.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+                // Fallback for Samsung browsers
+                setTimeout(() => {
+                  window.scrollTo({
+                    top: contactElement.offsetTop - 80,
+                    behavior: "smooth",
+                  });
+                }, 100);
+              }
             }}
           >
             Contact Us
@@ -191,10 +202,22 @@ export default function Navbar({ activeTab, forceActiveTab }: NavbarProps) {
                 onClick={(e) => {
                   e.preventDefault();
                   setOpen(false);
-                  document.getElementById("contact")?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
+                  // Use setTimeout to ensure menu closes and prevent Samsung browser issues
+                  setTimeout(() => {
+                    const contactElement = document.getElementById("contact");
+                    if (contactElement) {
+                      // Force scroll to contact section
+                      contactElement.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                      // Fallback for Samsung browsers
+                      window.scrollTo({
+                        top: contactElement.offsetTop - 80,
+                        behavior: "smooth",
+                      });
+                    }
+                  }, 150);
                 }}
               >
                 <button className="px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors">
