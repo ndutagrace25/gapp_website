@@ -46,10 +46,17 @@ export default function Navbar({
             }
             onClick={(e) => {
               e.preventDefault();
-              document.getElementById("projects")?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
+              const projectsElement = document.getElementById("projects");
+              if (projectsElement) {
+                setIsManualScrolling?.(true);
+                projectsElement.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+                setTimeout(() => {
+                  setIsManualScrolling?.(false);
+                }, 1000);
+              }
             }}
           >
             Projects
@@ -87,10 +94,17 @@ export default function Navbar({
             }
             onClick={(e) => {
               e.preventDefault();
-              document.getElementById("about")?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
+              const aboutElement = document.getElementById("about");
+              if (aboutElement) {
+                setIsManualScrolling?.(true);
+                aboutElement.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+                setTimeout(() => {
+                  setIsManualScrolling?.(false);
+                }, 1000);
+              }
             }}
           >
             About
@@ -165,10 +179,17 @@ export default function Navbar({
                 onClick={(e) => {
                   e.preventDefault();
                   setOpen(false);
-                  document.getElementById("projects")?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
+                  const projectsElement = document.getElementById("projects");
+                  if (projectsElement) {
+                    setIsManualScrolling?.(true);
+                    projectsElement.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                    setTimeout(() => {
+                      setIsManualScrolling?.(false);
+                    }, 1000);
+                  }
                 }}
               >
                 Projects
@@ -209,10 +230,17 @@ export default function Navbar({
                 onClick={(e) => {
                   e.preventDefault();
                   setOpen(false);
-                  document.getElementById("about")?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
+                  const aboutElement = document.getElementById("about");
+                  if (aboutElement) {
+                    setIsManualScrolling?.(true);
+                    aboutElement.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                    setTimeout(() => {
+                      setIsManualScrolling?.(false);
+                    }, 1000);
+                  }
                 }}
               >
                 About
