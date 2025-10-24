@@ -10,11 +10,17 @@ import Footer from "./components/Footer";
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("Home");
+  const [isManualScrolling, setIsManualScrolling] = useState(false);
 
   useEffect(() => {
     console.log("useEffect running");
 
     const handleScroll = () => {
+      // Skip scroll detection during manual scrolling
+      if (isManualScrolling) {
+        return;
+      }
+
       console.log("Scroll event triggered");
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
@@ -57,6 +63,11 @@ export default function HomePage() {
   // Also add a simple scroll listener on the document
   useEffect(() => {
     const handleDocumentScroll = () => {
+      // Skip scroll detection during manual scrolling
+      if (isManualScrolling) {
+        return;
+      }
+
       console.log("Document scroll event triggered");
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
@@ -83,7 +94,11 @@ export default function HomePage() {
 
   return (
     <main className="relative">
-      <Navbar activeTab="Home" forceActiveTab={activeTab} />
+      <Navbar
+        activeTab="Home"
+        forceActiveTab={activeTab}
+        setIsManualScrolling={setIsManualScrolling}
+      />
       <div className="relative">
         {/* Fixed background with HeroSlider */}
         <div className="fixed inset-0 z-0">

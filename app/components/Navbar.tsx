@@ -6,9 +6,14 @@ import Link from "next/link";
 interface NavbarProps {
   activeTab?: string;
   forceActiveTab?: string;
+  setIsManualScrolling?: (value: boolean) => void;
 }
 
-export default function Navbar({ activeTab, forceActiveTab }: NavbarProps) {
+export default function Navbar({
+  activeTab,
+  forceActiveTab,
+  setIsManualScrolling,
+}: NavbarProps) {
   const currentActiveTab = forceActiveTab || activeTab;
   const [open, setOpen] = useState(false);
 
@@ -96,18 +101,25 @@ export default function Navbar({ activeTab, forceActiveTab }: NavbarProps) {
               e.preventDefault();
               const contactElement = document.getElementById("contact");
               if (contactElement) {
-                // Primary scroll method
+                // Set manual scrolling flag
+                setIsManualScrolling?.(true);
+
+                // Simple approach for Chrome on Samsung S23
                 contactElement.scrollIntoView({
-                  behavior: "smooth",
+                  behavior: "instant",
                   block: "start",
                 });
-                // Fallback for Samsung browsers
+                // Then smooth scroll
                 setTimeout(() => {
-                  window.scrollTo({
-                    top: contactElement.offsetTop - 80,
+                  contactElement.scrollIntoView({
                     behavior: "smooth",
+                    block: "start",
                   });
-                }, 100);
+                  // Reset manual scrolling flag after scroll completes
+                  setTimeout(() => {
+                    setIsManualScrolling?.(false);
+                  }, 1000);
+                }, 10);
               }
             }}
           >
@@ -202,22 +214,31 @@ export default function Navbar({ activeTab, forceActiveTab }: NavbarProps) {
                 onClick={(e) => {
                   e.preventDefault();
                   setOpen(false);
-                  // Use setTimeout to ensure menu closes and prevent Samsung browser issues
+                  // Simple approach for Chrome on Samsung S23
                   setTimeout(() => {
                     const contactElement = document.getElementById("contact");
                     if (contactElement) {
-                      // Force scroll to contact section
+                      // Set manual scrolling flag
+                      setIsManualScrolling?.(true);
+
+                      // Use simple scrollIntoView with instant behavior first
                       contactElement.scrollIntoView({
-                        behavior: "smooth",
+                        behavior: "instant",
                         block: "start",
                       });
-                      // Fallback for Samsung browsers
-                      window.scrollTo({
-                        top: contactElement.offsetTop - 80,
-                        behavior: "smooth",
-                      });
+                      // Then smooth scroll
+                      setTimeout(() => {
+                        contactElement.scrollIntoView({
+                          behavior: "smooth",
+                          block: "start",
+                        });
+                        // Reset manual scrolling flag after scroll completes
+                        setTimeout(() => {
+                          setIsManualScrolling?.(false);
+                        }, 1000);
+                      }, 10);
                     }
-                  }, 150);
+                  }, 100);
                 }}
               >
                 <button className="px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors">
