@@ -27,24 +27,6 @@ export default function HomePage() {
 
       console.log("Scroll position:", scrollPosition);
       console.log("Window height:", windowHeight);
-
-      // Simple scroll-based detection - more sensitive threshold
-      if (scrollPosition > windowHeight * 3.5) {
-        console.log("Setting active tab to Contact");
-        setActiveTab("Contact");
-      } else if (scrollPosition > windowHeight * 2.5) {
-        console.log("Setting active tab to About");
-        setActiveTab("About");
-      } else if (scrollPosition > windowHeight * 1.5) {
-        console.log("Setting active tab to Principles");
-        setActiveTab("Principles");
-      } else if (scrollPosition > windowHeight * 0.3) {
-        console.log("Setting active tab to Projects");
-        setActiveTab("Projects");
-      } else {
-        console.log("Setting active tab to Home");
-        setActiveTab("Home");
-      }
     };
 
     // Add scroll listener with passive: false to ensure it works
@@ -95,9 +77,10 @@ export default function HomePage() {
   return (
     <main className="relative">
       <Navbar
-        activeTab="Home"
+        activeTab={activeTab}
         forceActiveTab={activeTab}
         setIsManualScrolling={setIsManualScrolling}
+        setActiveTab={setActiveTab}
       />
       <div className="relative">
         {/* Fixed background with HeroSlider */}

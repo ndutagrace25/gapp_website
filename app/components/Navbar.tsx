@@ -8,15 +8,19 @@ interface NavbarProps {
   activeTab?: string;
   forceActiveTab?: string;
   setIsManualScrolling?: (value: boolean) => void;
+  setActiveTab?: (value: string) => void;
 }
 
 export default function Navbar({
   activeTab,
   forceActiveTab,
   setIsManualScrolling,
+  setActiveTab,
 }: NavbarProps) {
   const currentActiveTab = forceActiveTab || activeTab;
   const [open, setOpen] = useState(false);
+
+
 
   return (
     <>
@@ -24,6 +28,7 @@ export default function Navbar({
         <Link
           href="/"
           className="flex items-center hover:opacity-80 transition-opacity cursor-pointer"
+          onClick={() => setActiveTab?.("Home")}
         >
           <div className="rounded-lg px-2 md:px-3 flex items-center gap-2">
             <Image
@@ -47,6 +52,7 @@ export default function Navbar({
                 ? "text-yellow-400 border-b border-yellow-400 pb-1"
                 : "hover:text-gray-300 transition-colors"
             }
+            onClick={() => setActiveTab?.("Home")}
           >
             Home
           </Link>
@@ -59,6 +65,7 @@ export default function Navbar({
             }
             onClick={(e) => {
               e.preventDefault();
+              setActiveTab?.("Projects");
               const projectsElement = document.getElementById("projects");
               if (projectsElement) {
                 setIsManualScrolling?.(true);
@@ -83,6 +90,7 @@ export default function Navbar({
             }
             onClick={(e) => {
               e.preventDefault();
+              setActiveTab?.("Principles");
               const principlesElement = document.getElementById("principles");
               if (principlesElement) {
                 setIsManualScrolling?.(true);
@@ -122,6 +130,7 @@ export default function Navbar({
             }
             onClick={(e) => {
               e.preventDefault();
+              setActiveTab?.("About");
               const aboutElement = document.getElementById("about");
               if (aboutElement) {
                 setIsManualScrolling?.(true);
@@ -148,6 +157,7 @@ export default function Navbar({
             }
             onClick={(e) => {
               e.preventDefault();
+              setActiveTab?.("Contact");
               const contactElement = document.getElementById("contact");
               if (contactElement) {
                 // Set manual scrolling flag
