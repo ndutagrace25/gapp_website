@@ -48,3 +48,24 @@ body::-webkit-scrollbar {
 .scroll-transition {
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Increase font size for card content */
+.projects-card-content p,
+.principles-card-content p,
+.about-card-content p,
+.contact-card-content p {
+  font-size: 1rem; /* 16px instead of 14px */
+  line-height: 1.6;
+}
+
+.projects-card-content h3,
+.principles-card-content h3,
+.about-card-content h3,
+.contact-card-content h3 {
+  font-size: 1.25rem; /* 20px instead of 18px */
+}
+
+.principles-card-content ul li {
+  font-size: 1rem; /* 16px for bullet points */
+  line-height: 1.6;
+}

@@ -50,38 +50,58 @@ export default function Navbar({ activeTab, forceActiveTab }: NavbarProps) {
             Projects
           </a>
           <a
-            href="#"
+            href="#principles"
             className={
-              activeTab === "Ideas"
+              currentActiveTab === "Principles"
                 ? "text-yellow-400 border-b border-yellow-400 pb-1"
                 : "hover:text-gray-300 transition-colors"
             }
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("principles")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
           >
-            Ideas
+            Principles
           </a>
           <a
-            href="#"
+            href="#about"
             className={
-              activeTab === "Culture"
+              currentActiveTab === "About"
                 ? "text-yellow-400 border-b border-yellow-400 pb-1"
                 : "hover:text-gray-300 transition-colors"
             }
-          >
-            Culture
-          </a>
-          <a
-            href="#"
-            className={
-              activeTab === "About"
-                ? "text-yellow-400 border-b border-yellow-400 pb-1"
-                : "hover:text-gray-300 transition-colors"
-            }
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("about")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
           >
             About
           </a>
         </nav>
         <div className="hidden md:flex gap-6 items-center text-[20px] font-light">
-          <button>Contact Us</button>
+          <a
+            href="#contact"
+            className={
+              currentActiveTab === "Contact"
+                ? "text-yellow-400 border-b border-yellow-400 pb-1"
+                : "hover:text-gray-300 transition-colors"
+            }
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("contact")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+          >
+            Contact Us
+          </a>
         </div>
 
         <button onClick={() => setOpen(!open)} className="md:hidden text-white">
@@ -124,15 +144,22 @@ export default function Navbar({ activeTab, forceActiveTab }: NavbarProps) {
                 Projects
               </a>
               <a
-                href="#"
+                href="#principles"
                 className={
-                  activeTab === "Ideas"
+                  currentActiveTab === "Principles"
                     ? "text-yellow-400"
                     : "hover:text-gray-300 transition-colors"
                 }
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpen(false);
+                  document.getElementById("principles")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
               >
-                Ideas
+                Principles
               </a>
               <a
                 href="#"
@@ -146,24 +173,45 @@ export default function Navbar({ activeTab, forceActiveTab }: NavbarProps) {
                 Culture
               </a>
               <a
-                href="#"
+                href="#about"
                 className={
-                  activeTab === "About"
+                  currentActiveTab === "About"
                     ? "text-yellow-400"
                     : "hover:text-gray-300 transition-colors"
                 }
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpen(false);
+                  document.getElementById("about")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
               >
                 About
               </a>
             </nav>
             <div className="pt-4">
-              <button
-                className="px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors"
-                onClick={() => setOpen(false)}
+              <a
+                href="#contact"
+                className={
+                  currentActiveTab === "Contact"
+                    ? "text-yellow-400"
+                    : "hover:text-gray-300 transition-colors"
+                }
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpen(false);
+                  document.getElementById("contact")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
               >
-                Contact Us
-              </button>
+                <button className="px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors">
+                  Contact Us
+                </button>
+              </a>
             </div>
           </div>
         </div>

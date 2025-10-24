@@ -3,6 +3,10 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import HeroSlider from "./components/HeroSlider";
 import Projects from "./components/Projects";
+import Principles from "./components/Principles";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function HomePage() {
   const [activeTab, setActiveTab] = useState("Home");
@@ -19,7 +23,16 @@ export default function HomePage() {
       console.log("Window height:", windowHeight);
 
       // Simple scroll-based detection - more sensitive threshold
-      if (scrollPosition > windowHeight * 0.3) {
+      if (scrollPosition > windowHeight * 3.5) {
+        console.log("Setting active tab to Contact");
+        setActiveTab("Contact");
+      } else if (scrollPosition > windowHeight * 2.5) {
+        console.log("Setting active tab to About");
+        setActiveTab("About");
+      } else if (scrollPosition > windowHeight * 1.5) {
+        console.log("Setting active tab to Principles");
+        setActiveTab("Principles");
+      } else if (scrollPosition > windowHeight * 0.3) {
         console.log("Setting active tab to Projects");
         setActiveTab("Projects");
       } else {
@@ -48,7 +61,13 @@ export default function HomePage() {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
 
-      if (scrollPosition > windowHeight * 0.3) {
+      if (scrollPosition > windowHeight * 3.5) {
+        setActiveTab("Contact");
+      } else if (scrollPosition > windowHeight * 2.5) {
+        setActiveTab("About");
+      } else if (scrollPosition > windowHeight * 1.5) {
+        setActiveTab("Principles");
+      } else if (scrollPosition > windowHeight * 0.3) {
         setActiveTab("Projects");
       } else {
         setActiveTab("Home");
@@ -79,17 +98,17 @@ export default function HomePage() {
           {/* Projects section that scrolls over the background */}
           <Projects />
 
-          {/* Additional content can go here */}
-          <div className="h-screen bg-white/95 backdrop-blur-sm flex items-center justify-center">
-            <div className="text-center">
-              <h2 className="text-4xl font-light text-gray-800 mb-4">
-                More Content
-              </h2>
-              <p className="text-gray-600">
-                This section demonstrates the layered scrolling effect
-              </p>
-            </div>
-          </div>
+          {/* Principles section */}
+          <Principles />
+
+          {/* About section */}
+          <About />
+
+          {/* Contact section */}
+          <Contact />
+
+          {/* Footer */}
+          <Footer />
         </div>
       </div>
     </main>

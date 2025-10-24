@@ -65,7 +65,7 @@ export default function Projects() {
                     </span>
                   </div>
                 </div>
-                <div className="p-6">
+                <div className="p-6 projects-card-content">
                   <h3 className="text-lg font-medium text-white mb-2 line-clamp-2">
                     {project.title}
                   </h3>
@@ -101,7 +101,7 @@ export default function Projects() {
                     </span>
                   </div>
                 </div>
-                <div className="p-6">
+                <div className="p-6 projects-card-content">
                   <h3 className="text-lg font-medium text-white mb-2 line-clamp-2">
                     {project.title}
                   </h3>
