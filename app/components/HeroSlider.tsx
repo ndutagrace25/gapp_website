@@ -56,13 +56,15 @@ export default function HeroSlider() {
       </div>
 
       {/* Slide indicator */}
-      <div className="absolute bottom-6 left-4 flex gap-2">
+      <div className="absolute bottom-8 left-4 flex gap-3">
         {slides.map((_, index) => (
           <div
             key={index}
             onClick={() => setSelected(index)}
-            className={`w-3 h-3 md:w-2 md:h-2 rounded-full cursor-pointer transition-all ${
-              index === selected ? "bg-white" : "bg-white/50"
+            className={`w-4 h-4 md:w-2 md:h-2 rounded-full cursor-pointer transition-all border-2 ${
+              index === selected
+                ? "bg-white border-white"
+                : "bg-white/20 border-white/50"
             }`}
           />
         ))}
