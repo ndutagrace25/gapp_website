@@ -60,7 +60,7 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 text-center md:text-left">
             <h3 className="text-2xl font-light text-white mb-4 tracking-widest">
               GAPP ARCHITECTS + PARTNERS LTD
             </h3>
@@ -70,7 +70,7 @@ export default function Footer() {
             </p>
 
             {/* Social Media */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-center md:justify-start">
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
                 return (
@@ -88,7 +88,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="text-lg font-medium text-white mb-4">Quick Links</h4>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -114,7 +114,7 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="text-lg font-medium text-white mb-4">
               Our Services
             </h4>
@@ -128,12 +128,12 @@ export default function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div>
+          <div className="text-center md:text-left">
             <h4 className="text-lg font-medium text-white mb-4">
               Contact Info
             </h4>
             <div className="space-y-4">
-              <div className="flex items-start">
+              <div className="flex items-start justify-center md:justify-start">
                 <MapPin className="w-5 h-5 text-yellow-400 mt-1 mr-3 flex-shrink-0" />
                 <div className="text-gray-300 text-sm">
                   <p>P.O. BOX 369, KIKUYU</p>
@@ -142,7 +142,7 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="flex items-center">
+              <div className="flex items-center justify-center md:justify-start">
                 <Phone className="w-5 h-5 text-yellow-400 mr-3 flex-shrink-0" />
                 <a
                   href="tel:+254710342129"
@@ -152,7 +152,7 @@ export default function Footer() {
                 </a>
               </div>
 
-              <div className="flex items-center">
+              <div className="flex items-center justify-center md:justify-start">
                 <Mail className="w-5 h-5 text-yellow-400 mr-3 flex-shrink-0" />
                 <a
                   href="mailto:ARCHGATONYEMWAURA@GMAIL.COM"
