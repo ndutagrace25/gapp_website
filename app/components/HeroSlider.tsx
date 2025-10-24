@@ -10,7 +10,8 @@ const slides = [
   },
   {
     image: "/images/Njuguna.jpg",
-    title: "From conceptualization to completion, the firm is committed to delivering tailored solutions",
+    title:
+      "From conceptualization to completion, the firm is committed to delivering tailored solutions",
   },
   {
     image: "/images/Victoria.jpg",
