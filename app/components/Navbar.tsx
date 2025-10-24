@@ -73,13 +73,28 @@ export default function Navbar({
               const principlesElement = document.getElementById("principles");
               if (principlesElement) {
                 setIsManualScrolling?.(true);
+
+                // Force scroll with multiple methods
                 principlesElement.scrollIntoView({
-                  behavior: "smooth",
+                  behavior: "instant",
                   block: "start",
                 });
+
+                // Additional fallback
+                setTimeout(() => {
+                  const elementTop =
+                    principlesElement.getBoundingClientRect().top +
+                    window.pageYOffset;
+                  window.scrollTo({
+                    top: elementTop - 80,
+                    behavior: "smooth",
+                  });
+                }, 50);
+
+                // Reset flag after longer delay
                 setTimeout(() => {
                   setIsManualScrolling?.(false);
-                }, 1000);
+                }, 1500);
               }
             }}
           >
@@ -204,18 +219,36 @@ export default function Navbar({
                 onClick={(e) => {
                   e.preventDefault();
                   setOpen(false);
-                  const principlesElement =
-                    document.getElementById("principles");
-                  if (principlesElement) {
-                    setIsManualScrolling?.(true);
-                    principlesElement.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                    });
-                    setTimeout(() => {
-                      setIsManualScrolling?.(false);
-                    }, 1000);
-                  }
+                  // More aggressive approach for Principles on mobile
+                  setTimeout(() => {
+                    const principlesElement =
+                      document.getElementById("principles");
+                    if (principlesElement) {
+                      setIsManualScrolling?.(true);
+
+                      // Force scroll with multiple methods
+                      principlesElement.scrollIntoView({
+                        behavior: "instant",
+                        block: "start",
+                      });
+
+                      // Additional fallback for mobile
+                      setTimeout(() => {
+                        const elementTop =
+                          principlesElement.getBoundingClientRect().top +
+                          window.pageYOffset;
+                        window.scrollTo({
+                          top: elementTop - 80,
+                          behavior: "smooth",
+                        });
+                      }, 50);
+
+                      // Reset flag after longer delay
+                      setTimeout(() => {
+                        setIsManualScrolling?.(false);
+                      }, 1500);
+                    }
+                  }, 200);
                 }}
               >
                 Principles
