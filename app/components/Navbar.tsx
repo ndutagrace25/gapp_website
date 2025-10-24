@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface NavbarProps {
   activeTab?: string;
@@ -19,12 +20,24 @@ export default function Navbar({
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full flex justify-between items-center px-4 md:px-8 py-4 md:py-6 text-white z-50">
+      <header className="fixed top-0 left-0 w-full flex justify-between items-center px-4 md:px-8 py-4 md:py-2 text-white z-50">
         <Link
           href="/"
-          className="text-lg md:text-2xl font-light tracking-widest hover:text-gray-300 transition-colors cursor-pointer"
+          className="flex items-center hover:opacity-80 transition-opacity cursor-pointer"
         >
-          GAPP ARCHITECTS + PARTNERS LTD
+          <div className="rounded-lg px-2 md:px-3 flex items-center gap-2">
+            <Image
+              src="/images/logo.png"
+              alt="GAPP ARCHITECTS + PARTNERS LTD"
+              width={80}
+              height={80}
+              className="h-18 md:h-20 w-auto"
+              priority
+            />
+            <p className="text-white text-sm md:text-base font-light">
+              GAPP ARCHITECTS + PARTNERS LTD
+            </p>
+          </div>
         </Link>
         <nav className="hidden md:flex gap-8 text-[20px] font-light">
           <Link

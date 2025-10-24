@@ -65,15 +65,17 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div className="bg-gray-900/80 backdrop-blur-sm rounded-lg p-8 border border-gray-700 contact-card-content">
-              <h3 className="text-2xl font-medium text-white mb-6">
+              <h3 className="text-2xl font-medium text-white mb-6 text-center md:text-left">
                 Get In Touch
               </h3>
 
               {/* Address */}
-              <div className="flex items-start mb-6">
-                <MapPin className="w-6 h-6 text-yellow-400 mt-1 mr-4 flex-shrink-0" />
+              <div className="mb-6 text-center md:text-left">
+                <div className="flex items-center justify-center md:justify-start mb-2">
+                  <MapPin className="w-5 h-5 text-yellow-400 mr-2" />
+                  <p className="font-medium text-white">Address</p>
+                </div>
                 <div className="text-gray-300">
-                  <p className="font-medium text-white mb-2">Address</p>
                   <p>{contactInfo.address.poBox}</p>
                   <p>{contactInfo.address.street}</p>
                   <p>{contactInfo.address.building}</p>
@@ -84,10 +86,12 @@ export default function Contact() {
               </div>
 
               {/* Phone */}
-              <div className="flex items-start mb-6">
-                <Phone className="w-6 h-6 text-yellow-400 mt-1 mr-4 flex-shrink-0" />
+              <div className="mb-6 text-center md:text-left">
+                <div className="flex items-center justify-center md:justify-start mb-2">
+                  <Phone className="w-5 h-5 text-yellow-400 mr-2" />
+                  <p className="font-medium text-white">Phone</p>
+                </div>
                 <div className="text-gray-300">
-                  <p className="font-medium text-white mb-2">Phone</p>
                   <a
                     href={`tel:${contactInfo.phone}`}
                     className="hover:text-yellow-400 transition-colors"
@@ -98,10 +102,12 @@ export default function Contact() {
               </div>
 
               {/* Email */}
-              <div className="flex items-start">
-                <Mail className="w-6 h-6 text-yellow-400 mt-1 mr-4 flex-shrink-0" />
+              <div className="text-center md:text-left">
+                <div className="flex items-center justify-center md:justify-start mb-2">
+                  <Mail className="w-5 h-5 text-yellow-400 mr-2" />
+                  <p className="font-medium text-white">Email</p>
+                </div>
                 <div className="text-gray-300">
-                  <p className="font-medium text-white mb-2">Email</p>
                   <a
                     href={`mailto:${contactInfo.email}`}
                     className="hover:text-yellow-400 transition-colors break-all"

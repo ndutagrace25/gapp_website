@@ -179,7 +179,7 @@ export const projects = [
     image: "/images/emali/3.jpg",
     intro: `This eco resort is sitting on a 20 acre piece of land with expansive...`,
     description: `This eco resort is sitting on a 20 acre piece of land with expansive views of wildlife and the Mt. Kilimanjaro. It comprises of 6 cottages and a central restaurant offering tranquility and relaxation for all visitors. There are two cottage typologies; deluxe unit (has one bed space) and premium unit (has two bed spaces).`,
-    client: `Mr John Mwaura`,
+    client: `Mr Catherine Njeri`,
     project_cost: "KES 30 Million",
     project_status: "Ongoing",
     project_images: [
