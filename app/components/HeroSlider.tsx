@@ -4,16 +4,16 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
-    image: "/images/astra_bay.png",
+    image: "/images/Astra.png",
     title:
       "Architectural Record Spotlights Sustainability at 500 County Center",
   },
   {
-    image: "/images/njuguna.png",
+    image: "/images/Njuguna.jpg",
     title: "Designing for the Future of Urban Living",
   },
   {
-    image: "/images/pool.png",
+    image: "/images/Victoria.jpg",
     title: "Innovating Through Architectural Excellence",
   },
 ];

@@ -1,8 +1,13 @@
 "use client";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
-export default function Navbar() {
+interface NavbarProps {
+  activeTab?: string;
+}
+
+export default function Navbar({ activeTab }: NavbarProps) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -12,10 +17,46 @@ export default function Navbar() {
           GAPP ARCHITECTS + PARTNERS LTD
         </div>
         <nav className="hidden md:flex gap-8 text-[20px] font-light">
-          <a href="#">Projects</a>
-          <a href="#">Ideas</a>
-          <a href="#">Culture</a>
-          <a href="#">About</a>
+          <Link
+            href="/"
+            className={
+              activeTab === "Projects"
+                ? "text-yellow-400 border-b border-yellow-400 pb-1"
+                : "hover:text-gray-300 transition-colors"
+            }
+          >
+            Projects
+          </Link>
+          <a
+            href="#"
+            className={
+              activeTab === "Ideas"
+                ? "text-yellow-400 border-b border-yellow-400 pb-1"
+                : "hover:text-gray-300 transition-colors"
+            }
+          >
+            Ideas
+          </a>
+          <a
+            href="#"
+            className={
+              activeTab === "Culture"
+                ? "text-yellow-400 border-b border-yellow-400 pb-1"
+                : "hover:text-gray-300 transition-colors"
+            }
+          >
+            Culture
+          </a>
+          <a
+            href="#"
+            className={
+              activeTab === "About"
+                ? "text-yellow-400 border-b border-yellow-400 pb-1"
+                : "hover:text-gray-300 transition-colors"
+            }
+          >
+            About
+          </a>
         </nav>
         <div className="hidden md:flex gap-6 items-center text-[20px] font-light">
           <button>Contact Us</button>
@@ -31,30 +72,46 @@ export default function Navbar() {
         <div className="fixed inset-0 bg-black bg-opacity-90 z-40 md:hidden">
           <div className="flex flex-col items-center justify-center h-full space-y-8 text-white">
             <nav className="flex flex-col items-center space-y-6 text-base font-light">
-              <a
-                href="#"
-                className="hover:text-gray-300 transition-colors"
+              <Link
+                href="/"
+                className={
+                  activeTab === "Projects"
+                    ? "text-yellow-400"
+                    : "hover:text-gray-300 transition-colors"
+                }
                 onClick={() => setOpen(false)}
               >
                 Projects
-              </a>
+              </Link>
               <a
                 href="#"
-                className="hover:text-gray-300 transition-colors"
+                className={
+                  activeTab === "Ideas"
+                    ? "text-yellow-400"
+                    : "hover:text-gray-300 transition-colors"
+                }
                 onClick={() => setOpen(false)}
               >
                 Ideas
               </a>
               <a
                 href="#"
-                className="hover:text-gray-300 transition-colors"
+                className={
+                  activeTab === "Culture"
+                    ? "text-yellow-400"
+                    : "hover:text-gray-300 transition-colors"
+                }
                 onClick={() => setOpen(false)}
               >
                 Culture
               </a>
               <a
                 href="#"
-                className="hover:text-gray-300 transition-colors"
+                className={
+                  activeTab === "About"
+                    ? "text-yellow-400"
+                    : "hover:text-gray-300 transition-colors"
+                }
                 onClick={() => setOpen(false)}
               >
                 About
