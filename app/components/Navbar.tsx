@@ -5,14 +5,16 @@ import Link from "next/link";
 
 interface NavbarProps {
   activeTab?: string;
+  forceActiveTab?: string;
 }
 
-export default function Navbar({ activeTab }: NavbarProps) {
+export default function Navbar({ activeTab, forceActiveTab }: NavbarProps) {
+  const currentActiveTab = forceActiveTab || activeTab;
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <header className="absolute top-0 left-0 w-full flex justify-between items-center px-4 md:px-8 py-4 md:py-6 text-white z-50">
+      <header className="fixed top-0 left-0 w-full flex justify-between items-center px-4 md:px-8 py-4 md:py-6 text-white z-50">
         <div className="text-lg md:text-2xl font-light tracking-widest">
           GAPP ARCHITECTS + PARTNERS LTD
         </div>
@@ -20,7 +22,7 @@ export default function Navbar({ activeTab }: NavbarProps) {
           <Link
             href="/"
             className={
-              activeTab === "Home"
+              currentActiveTab === "Home"
                 ? "text-yellow-400 border-b border-yellow-400 pb-1"
                 : "hover:text-gray-300 transition-colors"
             }
@@ -30,7 +32,7 @@ export default function Navbar({ activeTab }: NavbarProps) {
           <a
             href="#projects"
             className={
-              activeTab === "Projects"
+              currentActiveTab === "Projects"
                 ? "text-yellow-400 border-b border-yellow-400 pb-1"
                 : "hover:text-gray-300 transition-colors"
             }
@@ -92,7 +94,7 @@ export default function Navbar({ activeTab }: NavbarProps) {
               <Link
                 href="/"
                 className={
-                  activeTab === "Home"
+                  currentActiveTab === "Home"
                     ? "text-yellow-400"
                     : "hover:text-gray-300 transition-colors"
                 }
@@ -103,7 +105,7 @@ export default function Navbar({ activeTab }: NavbarProps) {
               <a
                 href="#projects"
                 className={
-                  activeTab === "Projects"
+                  currentActiveTab === "Projects"
                     ? "text-yellow-400"
                     : "hover:text-gray-300 transition-colors"
                 }

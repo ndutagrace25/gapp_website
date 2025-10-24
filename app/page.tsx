@@ -8,39 +8,63 @@ export default function HomePage() {
   const [activeTab, setActiveTab] = useState("Home");
 
   useEffect(() => {
-    const projectsSection = document.getElementById("projects");
+    console.log("useEffect running");
 
-    if (!projectsSection) return;
+    const handleScroll = () => {
+      console.log("Scroll event triggered");
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveTab("Projects");
-          } else {
-            // Only switch back to Home if we're scrolling up past the projects section
-            if (window.scrollY < window.innerHeight * 0.5) {
-              setActiveTab("Home");
-            }
-          }
-        });
-      },
-      {
-        threshold: 0.3, // Trigger when 30% of the projects section is visible
-        rootMargin: "-20% 0px -20% 0px", // Add some margin for better UX
+      console.log("Scroll position:", scrollPosition);
+      console.log("Window height:", windowHeight);
+
+      // Simple scroll-based detection - more sensitive threshold
+      if (scrollPosition > windowHeight * 0.3) {
+        console.log("Setting active tab to Projects");
+        setActiveTab("Projects");
+      } else {
+        console.log("Setting active tab to Home");
+        setActiveTab("Home");
       }
-    );
+    };
 
-    observer.observe(projectsSection);
+    // Add scroll listener with passive: false to ensure it works
+    window.addEventListener("scroll", handleScroll, { passive: false });
+    console.log("Scroll listener added");
+
+    // Initial check
+    handleScroll();
 
     return () => {
-      observer.disconnect();
+      console.log("Cleaning up scroll listener");
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Also add a simple scroll listener on the document
+  useEffect(() => {
+    const handleDocumentScroll = () => {
+      console.log("Document scroll event triggered");
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      if (scrollPosition > windowHeight * 0.3) {
+        setActiveTab("Projects");
+      } else {
+        setActiveTab("Home");
+      }
+    };
+
+    document.addEventListener("scroll", handleDocumentScroll);
+
+    return () => {
+      document.removeEventListener("scroll", handleDocumentScroll);
     };
   }, []);
 
   return (
     <main className="relative">
-      <Navbar activeTab={activeTab} />
+      <Navbar activeTab="Home" forceActiveTab={activeTab} />
       <div className="relative">
         {/* Fixed background with HeroSlider */}
         <div className="fixed inset-0 z-0">
