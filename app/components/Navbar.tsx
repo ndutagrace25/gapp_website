@@ -20,13 +20,30 @@ export default function Navbar({ activeTab }: NavbarProps) {
           <Link
             href="/"
             className={
-              activeTab === "Projects"
+              activeTab === "Home"
                 ? "text-yellow-400 border-b border-yellow-400 pb-1"
                 : "hover:text-gray-300 transition-colors"
             }
           >
-            Projects
+            Home
           </Link>
+          <a
+            href="#projects"
+            className={
+              activeTab === "Projects"
+                ? "text-yellow-400 border-b border-yellow-400 pb-1"
+                : "hover:text-gray-300 transition-colors"
+            }
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById("projects")?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+          >
+            Projects
+          </a>
           <a
             href="#"
             className={
@@ -75,14 +92,32 @@ export default function Navbar({ activeTab }: NavbarProps) {
               <Link
                 href="/"
                 className={
-                  activeTab === "Projects"
+                  activeTab === "Home"
                     ? "text-yellow-400"
                     : "hover:text-gray-300 transition-colors"
                 }
                 onClick={() => setOpen(false)}
               >
-                Projects
+                Home
               </Link>
+              <a
+                href="#projects"
+                className={
+                  activeTab === "Projects"
+                    ? "text-yellow-400"
+                    : "hover:text-gray-300 transition-colors"
+                }
+                onClick={(e) => {
+                  e.preventDefault();
+                  setOpen(false);
+                  document.getElementById("projects")?.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+                }}
+              >
+                Projects
+              </a>
               <a
                 href="#"
                 className={

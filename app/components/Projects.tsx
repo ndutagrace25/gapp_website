@@ -11,7 +11,7 @@ export default function Projects() {
   };
 
   return (
-    <div className="relative z-10 bg-black/40 backdrop-blur-sm">
+    <div id="projects" className="relative z-10 bg-black/40 backdrop-blur-sm">
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-light text-white mb-4">

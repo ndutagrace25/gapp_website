@@ -1,11 +1,46 @@
+"use client";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import HeroSlider from "./components/HeroSlider";
 import Projects from "./components/Projects";
 
 export default function HomePage() {
+  const [activeTab, setActiveTab] = useState("Home");
+
+  useEffect(() => {
+    const projectsSection = document.getElementById("projects");
+
+    if (!projectsSection) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveTab("Projects");
+          } else {
+            // Only switch back to Home if we're scrolling up past the projects section
+            if (window.scrollY < window.innerHeight * 0.5) {
+              setActiveTab("Home");
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the projects section is visible
+        rootMargin: "-20% 0px -20% 0px", // Add some margin for better UX
+      }
+    );
+
+    observer.observe(projectsSection);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <main className="relative">
-      <Navbar activeTab="Projects" />
+      <Navbar activeTab={activeTab} />
       <div className="relative">
         {/* Fixed background with HeroSlider */}
         <div className="fixed inset-0 z-0">
