@@ -43,7 +43,7 @@ export default function HeroSlider() {
             style={{ backgroundImage: `url(${slide.image})` }}
           >
             <div className="absolute inset-0 bg-black/40" />
-            <div className="absolute bottom-32 md:bottom-24 left-4 md:left-16 text-white max-w-2xl">
+            <div className="absolute bottom-60 md:bottom-24 left-4 md:left-16 text-white max-w-2xl">
               <p className="text-xs md:text-sm font-light mb-2 md:mb-3">
                 GAPP ARCHITECTS + PARTNERS LTD
               </p>
@@ -56,7 +56,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Slide indicator */}
-      <div className="absolute bottom-4 left-4 flex gap-3">
+      <div className="fixed bottom-30 md:bottom-4 left-4 flex gap-3 z-50">
         {slides.map((_, index) => (
           <div
             key={index}
