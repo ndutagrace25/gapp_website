@@ -63,10 +63,17 @@ export default function Navbar({
             }
             onClick={(e) => {
               e.preventDefault();
-              document.getElementById("principles")?.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              });
+              const principlesElement = document.getElementById("principles");
+              if (principlesElement) {
+                setIsManualScrolling?.(true);
+                principlesElement.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+                setTimeout(() => {
+                  setIsManualScrolling?.(false);
+                }, 1000);
+              }
             }}
           >
             Principles
@@ -176,10 +183,18 @@ export default function Navbar({
                 onClick={(e) => {
                   e.preventDefault();
                   setOpen(false);
-                  document.getElementById("principles")?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
+                  const principlesElement =
+                    document.getElementById("principles");
+                  if (principlesElement) {
+                    setIsManualScrolling?.(true);
+                    principlesElement.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                    setTimeout(() => {
+                      setIsManualScrolling?.(false);
+                    }, 1000);
+                  }
                 }}
               >
                 Principles
