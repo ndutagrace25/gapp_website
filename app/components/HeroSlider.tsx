@@ -6,11 +6,11 @@ const slides = [
   {
     image: "/images/Astra.png",
     title:
-      "Architectural Record Spotlights Sustainability at 500 County Center",
+      "Distinguished architectural firm across the East and Central Africa Region",
   },
   {
     image: "/images/Njuguna.jpg",
-    title: "Designing for the Future of Urban Living",
+    title: "From conceptualization to completion, the firm is committed to delivering tailored solutions",
   },
   {
     image: "/images/Victoria.jpg",
@@ -44,7 +44,7 @@ export default function HeroSlider() {
             <div className="absolute inset-0 bg-black/40" />
             <div className="absolute bottom-16 md:bottom-24 left-4 md:left-16 text-white max-w-2xl">
               <p className="text-xs md:text-sm font-light mb-2 md:mb-3">
-                In the Press
+                GAPP ARCHITECTS + PARTNERS LTD
               </p>
               <h1 className="text-2xl md:text-5xl font-light leading-snug">
                 {slide.title}
