@@ -56,7 +56,7 @@ export default function HeroSlider() {
       </div>
 
       {/* Slide indicator */}
-      <div className="absolute bottom-6 md:bottom-10 left-4 md:left-16 flex gap-2">
+      <div className="absolute bottom-6 left-4 flex gap-2">
         {slides.map((_, index) => (
           <div
             key={index}
