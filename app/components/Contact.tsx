@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { MapPin, Phone, Mail, Building } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
 
 const contactInfo = {
   address: {
@@ -56,8 +56,8 @@ export default function Contact() {
             Contact Us
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
-            Get in touch with us for your architectural needs. We'd love to hear
-            from you.
+            Get in touch with us for your architectural needs. We&apos;d love to
+            hear from you.
           </p>
         </div>
 
