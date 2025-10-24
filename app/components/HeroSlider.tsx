@@ -61,7 +61,7 @@ export default function HeroSlider() {
           <div
             key={index}
             onClick={() => setSelected(index)}
-            className={`w-2 h-2 rounded-full cursor-pointer transition-all ${
+            className={`w-3 h-3 md:w-2 md:h-2 rounded-full cursor-pointer transition-all ${
               index === selected ? "bg-white" : "bg-white/50"
             }`}
           />
