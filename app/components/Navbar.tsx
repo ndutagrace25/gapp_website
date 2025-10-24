@@ -162,17 +162,6 @@ export default function Navbar({ activeTab, forceActiveTab }: NavbarProps) {
                 Principles
               </a>
               <a
-                href="#"
-                className={
-                  activeTab === "Culture"
-                    ? "text-yellow-400"
-                    : "hover:text-gray-300 transition-colors"
-                }
-                onClick={() => setOpen(false)}
-              >
-                Culture
-              </a>
-              <a
                 href="#about"
                 className={
                   currentActiveTab === "About"
