@@ -15,9 +15,12 @@ export default function Navbar({ activeTab, forceActiveTab }: NavbarProps) {
   return (
     <>
       <header className="fixed top-0 left-0 w-full flex justify-between items-center px-4 md:px-8 py-4 md:py-6 text-white z-50">
-        <div className="text-lg md:text-2xl font-light tracking-widest">
+        <Link
+          href="/"
+          className="text-lg md:text-2xl font-light tracking-widest hover:text-gray-300 transition-colors cursor-pointer"
+        >
           GAPP ARCHITECTS + PARTNERS LTD
-        </div>
+        </Link>
         <nav className="hidden md:flex gap-8 text-[20px] font-light">
           <Link
             href="/"
