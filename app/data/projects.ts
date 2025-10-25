@@ -222,4 +222,21 @@ export const projects = [
       "/images/median/3.jpg",
     ],
   },
+  {
+    id: 14,
+    location: "Nairobi CBD",
+    title: "Eastwest Fashions Interior Fit-Out",
+    date: "Sep 2025 - Ongoing",
+    image: "/images/eastwest/3.jpg",
+    intro: `Eastwest Fashions is a fashion brand that specializes in...`,
+    description: `Eastwest Fashions is a fashion brand that specializes in making high-quality fashion products for men and women. The company is located in Nairobi CBD and is known for its stylish and trendy designs. The company is currently undergoing an interior fit-out to improve its workspace and create a more comfortable and productive environment for its employees.`,
+    client: `Eastwest Fashions`,
+    project_cost: "N/A",
+    project_status: "Ongoing",
+    project_images: [
+      "/images/eastwest/1.jpg",
+      "/images/eastwest/2.jpg",
+      "/images/eastwest/3.jpg",
+    ],
+  },
 ];
