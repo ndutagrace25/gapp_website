@@ -19,7 +19,7 @@ const socialLinks = [
   {
     name: "Instagram",
     icon: Instagram,
-    href: "#",
+    href: "https://www.instagram.com/gapp_architects_and_partners?igsh=dHRudnNteGdyb250&utm_source=qr",
     color: "hover:text-pink-400",
   },
   {
