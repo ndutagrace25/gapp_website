@@ -4,6 +4,11 @@ import { useEffect, useState } from "react";
 
 const slides = [
   {
+    image: "/images/huracan/5.jpg",
+    title:
+      "Excellence in the architectural landscape of the East and Central Africa Region",
+  },
+  {
     image: "/images/Astra.png",
     title:
       "Distinguished architectural firm across the East and Central Africa Region",

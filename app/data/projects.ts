@@ -1,6 +1,25 @@
 export const projects = [
   {
     id: 1,
+    location: "Runda, Nairobi",
+    title: "HURACAN",
+    date: "Ongoing",
+    image: "/images/huracan/5.jpg",
+    intro:
+      "Stunning 5 bedroom with SQ - 3 storey villa located at the heart of Runda... ",
+    description: `Stunning 5 bedroom with SQ - 3 storey villa located at the heart of Runda. This Villa's highlights include: Car Lift, Gym and Private Cinema. It also includes an Outdoor Oasis comprising of; Pergola, BBQ area, sitting and rooftop greenery.`,
+    client: `N/A`,
+    project_cost: "N/A",
+    project_status: "Ongoing",
+    project_images: [
+      "/images/huracan/1.jpg",
+      "/images/huracan/2.jpg",
+      "/images/huracan/3.jpg",
+      "/images/huracan/4.jpg",
+    ],
+  },
+  {
+    id: 2,
     location: "Lower Kabete",
     title: "ASTRA BAY MIXED USE DEVELOPMENT",
     date: "4th Oct 2024 - 21st Aug 2027",
@@ -19,7 +38,7 @@ export const projects = [
   },
 
   {
-    id: 2,
+    id: 3,
     location: "Westlands, Nairobi",
     title: "NJUGUNA'S PLACE",
     date: "6th Jan 2023 - 8th Feb 2024",
@@ -36,7 +55,7 @@ export const projects = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     location: "Sigona, Kiambu",
     title: "VICTORY APARTMENTS",
     date: "7th Jan 2025 - 20th Dec 2026",
@@ -53,7 +72,7 @@ export const projects = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     location: "Karen, Nairobi",
     title: "CASTLE CREEK KAREN",
     date: "29th July 2024 - 7th Oct 2026",
@@ -70,7 +89,7 @@ export const projects = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     location: "Tatu City, Kiambu",
     title: "Obradleys Investments Ltd Warehouse",
     date: "1st April 2024 - 7th Feb 2026",
@@ -87,7 +106,7 @@ export const projects = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     location: "Eldoret, Uasin Gishu",
     title: "Residential Mansion",
     date: "18th Nov 2023 - Ongoing",
@@ -104,7 +123,7 @@ export const projects = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     location: "Nnayuki, Laikipia",
     title: "Ukiyo House",
     date: "18th Nov 2023 - Ongoing",
@@ -121,7 +140,7 @@ export const projects = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     location: "Kigali, Rwanda",
     title: "Botique Hotel",
     date: "15th June 2023 - Ongoing",
@@ -138,7 +157,7 @@ export const projects = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     location: "Lang'ata, Nairobi",
     title: "Residential Apartments",
     date: "March 2023 - April 2026",
@@ -155,7 +174,7 @@ export const projects = [
     ],
   },
   {
-    id: 10,
+    id: 11,
     location: "Kikuyu, Kiambu",
     title: "Magnolia Villas",
     date: "Feb 2024 - May 2027",
@@ -172,7 +191,7 @@ export const projects = [
     ],
   },
   {
-    id: 11,
+    id: 12,
     location: "Isara, Kajiado",
     title: "Emali Eco-Resort",
     date: "19th March 2024 - 5th May 2025",
@@ -189,7 +208,7 @@ export const projects = [
     ],
   },
   {
-    id: 12,
+    id: 13,
     location: "Karen, Nairobi",
     title: "House of Procurement Interior Fit-Out Office (HQ)",
     date: "30th Jan 2023 - 6th April 2023",
@@ -206,7 +225,7 @@ export const projects = [
     ],
   },
   {
-    id: 13,
+    id: 14,
     location: "Nairobi CBD",
     title: "Meridian Acceptances Ltd Interior Fit-Out Office",
     date: "2nd May 2023 - 15th June 2023",
@@ -223,7 +242,7 @@ export const projects = [
     ],
   },
   {
-    id: 14,
+    id: 15,
     location: "Nairobi CBD",
     title: "Eastwest Fashions Interior Fit-Out",
     date: "Sep 2025 - Ongoing",
