@@ -2,18 +2,18 @@
 import {
   Facebook,
   Instagram,
-  Twitter,
-  Linkedin,
+  X,
   Mail,
   Phone,
   MapPin,
+  Video,
 } from "lucide-react";
 
 const socialLinks = [
   {
     name: "Facebook",
     icon: Facebook,
-    href: "#",
+    href: "https://www.facebook.com/profile.php?id=61583034140510",
     color: "hover:text-blue-400",
   },
   {
@@ -23,15 +23,15 @@ const socialLinks = [
     color: "hover:text-pink-400",
   },
   {
-    name: "Twitter",
-    icon: Twitter,
-    href: "#",
-    color: "hover:text-blue-300",
+    name: "X",
+    icon: X,
+    href: "https://x.com/gapparchitects?s=11&t=P96-GQOGBko-3cmCPf2hsA",
+    color: "hover:text-gray-200",
   },
   {
-    name: "LinkedIn",
-    icon: Linkedin,
-    href: "#",
+    name: "TikTok",
+    icon: Video,
+    href: "http://www.tiktok.com/@gapp.architects.p",
     color: "hover:text-blue-500",
   },
 ];
