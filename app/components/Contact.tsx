@@ -4,12 +4,12 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 const contactInfo = {
   address: {
-    poBox: "NAIROBI",
-    street: "WESTLANDS",
+    poBox: "",
+    street: "",
     building: "IBIAM AKANU HOUSE, FOURTH FLOOR, SUITE 403",
     locality: "WESTLANDS",
     district: "NAIROBI",
-    county: "NAIROBI",
+    county: "",
   },
   phone: "+254710342129",
   email: "info@gapparchitects.com",
@@ -76,12 +76,12 @@ export default function Contact() {
                   <p className="font-medium text-white">Address</p>
                 </div>
                 <div className="text-gray-300">
-                  <p>{contactInfo.address.poBox}</p>
-                  <p>{contactInfo.address.street}</p>
-                  <p>{contactInfo.address.building}</p>
-                  <p>{contactInfo.address.locality}</p>
-                  <p>{contactInfo.address.district}</p>
-                  <p>{contactInfo.address.county}</p>
+                  {contactInfo.address.poBox && <p>{contactInfo.address.poBox}</p>}
+                  {contactInfo.address.street && <p>{contactInfo.address.street}</p>}
+                  {contactInfo.address.building && <p>{contactInfo.address.building}</p>}
+                  {contactInfo.address.locality && <p>{contactInfo.address.locality}</p>}
+                  {contactInfo.address.district && <p>{contactInfo.address.district}</p>}
+                  {contactInfo.address.county && <p>{contactInfo.address.county}</p>}
                 </div>
               </div>
 
