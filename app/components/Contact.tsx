@@ -4,15 +4,15 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 const contactInfo = {
   address: {
-    poBox: "P.O. BOX 369, KIKUYU",
-    street: "WAIYAKI WAY",
-    building: "HOUSE NO",
-    locality: "SIGONA",
-    district: "KABETE DISTRICT",
-    county: "KIAMBU",
+    poBox: "NAIROBI",
+    street: "WESTLANDS",
+    building: "IBIAM AKANU HOUSE, FOURTH FLOOR, SUITE 403",
+    locality: "WESTLANDS",
+    district: "NAIROBI",
+    county: "NAIROBI",
   },
   phone: "+254710342129",
-  email: "ARCHGATONYEMWAURA@GMAIL.COM",
+  email: "info@gapparchitects.com",
 };
 
 export default function Contact() {
