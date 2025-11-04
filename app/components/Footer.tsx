@@ -136,9 +136,11 @@ export default function Footer() {
               <div className="flex items-start justify-center md:justify-start">
                 <MapPin className="w-5 h-5 text-yellow-400 mt-1 mr-3 flex-shrink-0" />
                 <div className="text-gray-300 text-sm">
-                  <p>P.O. BOX 369, KIKUYU</p>
-                  <p>WAIYAKI WAY, SIGONA</p>
-                  <p>KABETE DISTRICT, KIAMBU</p>
+                  <p>P.O. BOX 38041-00100</p>
+                  <p>All Africa Conference of Churches (AACC) Complex</p>
+                  <p>Ibiam Akanu House, Fourth Floor, Suite 403</p>
+                  <p>Westlands</p>
+                  <p>Nairobi</p>
                 </div>
               </div>
 
@@ -155,10 +157,10 @@ export default function Footer() {
               <div className="flex items-center justify-center md:justify-start">
                 <Mail className="w-5 h-5 text-yellow-400 mr-3 flex-shrink-0" />
                 <a
-                  href="mailto:ARCHGATONYEMWAURA@GMAIL.COM"
+                  href="mailto:info@gapparchitects.com"
                   className="text-gray-300 hover:text-yellow-400 transition-colors duration-300 text-sm break-all"
                 >
-                  ARCHGATONYEMWAURA@GMAIL.COM
+                  info@gapparchitects.com
                 </a>
               </div>
             </div>

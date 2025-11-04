@@ -4,11 +4,11 @@ import { MapPin, Phone, Mail } from "lucide-react";
 
 const contactInfo = {
   address: {
-    poBox: "",
-    street: "",
-    building: "IBIAM AKANU HOUSE, FOURTH FLOOR, SUITE 403",
-    locality: "WESTLANDS",
-    district: "NAIROBI",
+    poBox: "P.O. Box 38041-00100",
+    street: "All Africa Conference of Churches (AACC) Complex",
+    building: "Ibiam Akanu House, Fourth Floor, Suite 403",
+    locality: "Westlands",
+    district: "Nairobi",
     county: "",
   },
   phone: "+254710342129",
